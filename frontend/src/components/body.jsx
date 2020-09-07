@@ -1,39 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import {MainPage, Box, Text} from './styles';
+import {MainPage, Box, Text, Container, Column} from './styles';
 import NavBar from './navBar';
 
 
 
 function Body() {
  const [box, setBox] = useState('Click Here to Load Current Resume from GIST')
+ const [gist, setGist] = useState({
+     name: '',
+     email: '',
+     linkedin: '',
+     phone: '',
+     lang: [''],
+     db: [''],
+     framework: [''],
+     other: [''],
+     education: [{degree: '', college: '', location: '', year: ''}],
+     project: [{name: '', github: '', deployed: '', tools: '', bulletpoints: [{bp: ''}]}],
+     experience: [{name: '', postion: '', start: '12/31/1969', end: '01/01/1970', description: ''}]
+ })
  function clickHandler(){
-        fetch('https://gist.githubusercontent.com/atocchi/aff068d4477f105b39b88ffb95fa83ca/raw/48b88ad3c348505ac41a5a0c647974652126345d/data.json')
+        fetch('https://gist.githubusercontent.com/atocchi/aff068d4477f105b39b88ffb95fa83ca/raw/4af46819030ebc5b90f9b20e1d7ff24d37208f9f/data.json')
     .then((response) =>{
+        if(response.status === 200){
         response.json().then((res) =>{
-            console.log(res)
-            setBox(res.p1)
+            setGist(res)
         })
+        }
+        else{
+            alert(response.status)
+        }
     })
     }
     return(
         <MainPage>
             <NavBar />
-            <div style={{display:'flex', flexDirection:'row',marginLeft: '5%'}}>
-            <div style={{width: '33%'}}>
+            <Container>
+            <Column>
             <Box onClick={() => clickHandler() }>
-                <Text>{box}</Text>
+                <Text>{gist.name}</Text>
+                <Text>{gist.email}</Text>
+                <Text>{gist.linkedin}</Text>
+                <Text>{gist.phone}</Text>
             </Box>
+            <Box>
+                { gist.lang.map((key,value) => 
+                    <Text>{key}</Text>
+                ) }
+            </Box>
+            </Column>
+            <Column>
             <Box></Box>
-            </div>
-            <div style={{width: '33%'}}>
+            <Box></Box>
+            </Column>
+            <Column>
             <Box></Box>
             <Box></Box>
-            </div>
-            <div style={{width: '33%'}}>
-            <Box></Box>
-            <Box></Box>
-            </div>
-            </div>
+            </Column>
+            </Container>
         </MainPage>
     )
 }

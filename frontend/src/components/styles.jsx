@@ -10,6 +10,20 @@ import styled from 'styled-components';
     const Text = styled.p`
     margin: 15px;
     `
+    const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+    `
+    const Column = styled.div`
+    width: 33%;
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+    `
     const Bar = styled.div`
     width:95%;
     margin-top: 1.5%;
@@ -43,5 +57,9 @@ import styled from 'styled-components';
     &::-webkit-scrollbar {
         display: none;
     }
+    @media (max-width: 600px) {
+        width: 95%;
+        margin-left: 0%;
+    }
     `
-export {MainPage, Bar, Name, Box, Text}
+export {MainPage, Bar, Name, Box, Text, Container, Column}
