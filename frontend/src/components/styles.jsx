@@ -39,6 +39,46 @@ import styled from 'styled-components';
     box-shadow: inset 1px 1px 9px 1px #888888,
     inset 1px 1px 9px 1px #888888;
     `
+    const Holder = styled.div`
+    margin-left: 10px;
+    margin-top: 10px;
+    `
+    const CoverText = styled.p`
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    `
+    const Oval = styled.button`
+    margin-right: 2px;
+    border-radius: 50%;
+    height: 20px;
+    width: 7px;
+    box-shadow: inset 1px 0px 5px 0px #888888, 
+    inset -1px 1px 0px 0px #888888;
+    z-index: -1;
+    `
+    const BlackOval = styled.button`
+    margin-right: 2px;
+    border-radius: 50%;
+    height: 20px;
+    width: 7px;
+    box-shadow: inset 1px 0px 5px 0px #888888, 
+    inset -1px 1px 13px 0px #888888;
+    z-index: -1;
+    `
+    const Cover = styled.div`
+    width: 100%;
+    height: 50%;
+    background-color: #787878;
+    text-align: center;
+    align-items: center;
+    padding-top: 150px;
+    color: white;
+    @media (max-width: 600px) {
+ 
+    }
+    `
     const Name = styled.span`
     font-size: 22px;
     margin-left: 15px;
@@ -48,7 +88,6 @@ import styled from 'styled-components';
     margin: 2.5%;
     height: 300px;
     width: 300px;
-    padding-top: 5px;
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: inset 1px 1px 9px 1px #888888,
@@ -62,4 +101,4 @@ import styled from 'styled-components';
         margin-left: 0%;
     }
     `
-export {MainPage, Bar, Name, Box, Text, Container, Column}
+export {MainPage, Bar, Name, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval}
