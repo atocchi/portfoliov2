@@ -30,7 +30,7 @@ import styled from 'styled-components';
     margin-left: 2.5%;
     maring-right: 2.5%;
     height: 50px;
-    background-color: #f2eecb;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     padding-top: 5px;
@@ -49,7 +49,7 @@ import styled from 'styled-components';
     height: 300px;
     width: 300px;
     padding-top: 5px;
-    background-color: #f2eecb;
+    background-color: #ffffff;
     border-radius: 20px;
     box-shadow: inset 1px 1px 9px 1px #888888,
     inset 1px 1px 9px 1px #888888;

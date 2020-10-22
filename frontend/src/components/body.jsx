@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {MainPage, Box, Text, Container, Column} from './styles';
 import NavBar from './navBar';
-
-
+let data = '<div> bepis </div>'
 
 function Body() {
  const [box, setBox] = useState('Click Here to Load Current Resume from GIST')
@@ -44,13 +43,39 @@ function Body() {
                 <Text>{gist.phone}</Text>
             </Box>
             <Box>
+                <Text>
                 { gist.lang.map((key,value) => 
-                    <Text>{key}</Text>
+                   `${key}, `
                 ) }
+                </Text>
+                <Text>
+                { gist.db.map((key,value) => 
+                   `${key}, `
+                ) }
+                </Text>
+                <Text>
+                { gist.framework.map((key,value) => 
+                   `${key}, `
+                ) }
+                </Text>
+                <Text>
+                { gist.other.map((key,value) => 
+                   `${key}, `
+                ) }
+                </Text>
             </Box>
             </Column>
             <Column>
-            <Box></Box>
+            <Box>
+            
+                { gist.education.map((key,value) => 
+                <Text>
+                   <Text>{key.degree} - {key.year}</Text>
+                   <Text>{key.college}: {key.location}</Text>          
+                </Text>
+                ) }
+                
+            </Box>
             <Box></Box>
             </Column>
             <Column>
