@@ -42,6 +42,9 @@ import styled from 'styled-components';
     const Holder = styled.div`
     margin-left: 10px;
     margin-top: 10px;
+    position: sticky;
+    height: 20px;
+    top: 5%;
     `
     const CoverText = styled.p`
     position: relative;
@@ -58,6 +61,17 @@ import styled from 'styled-components';
     inset -1px 1px 0px 0px #888888;
     z-index: -1;
     `
+    const RedX = styled.button`
+    margin-right: 2px;
+    border-radius: 50%;
+    font-size: 8px;
+    height: 20px;
+    width: 7px;
+    box-shadow: inset 1px 0px 5px 0px #888888, 
+    inset -1px 1px 9px 0px #ff0d0dfc;
+    position: absolute;
+    right: 5%;
+    `
     const BlackOval = styled.button`
     margin-right: 2px;
     border-radius: 50%;
@@ -65,7 +79,6 @@ import styled from 'styled-components';
     width: 7px;
     box-shadow: inset 1px 0px 5px 0px #888888, 
     inset -1px 1px 13px 0px #888888;
-    z-index: -1;
     `
     const Cover = styled.div`
     width: 100%;
@@ -101,4 +114,4 @@ import styled from 'styled-components';
         margin-left: 0%;
     }
     `
-export {MainPage, Bar, Name, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval}
+export {MainPage, Bar, Name, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX}

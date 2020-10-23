@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import {MainPage, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval} from './styles';
+import {MainPage, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX} from './styles';
 import NavBar from './navBar';
 let data = '<div> bepis </div>'
 
@@ -52,6 +52,9 @@ function Body() {
             box[1] 
             ?
             <Fragment>
+                 <Holder>
+                <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [1]: false})}}></RedX>
+                </Holder>
                 <Text>{gist.name}</Text>
                 <Text><a href={'mailto:'+ gist.email}>{gist.email}</a></Text>
                 <Text><a href={gist.linkedin}>{gist.linkedin}</a></Text>
@@ -68,6 +71,9 @@ function Body() {
             box[2] 
             ?
             <Fragment>
+                 <Holder>
+                <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [2]: false})}}></RedX>
+                </Holder>
                 <Text>
                 { gist.lang.map((key,value) => 
                    `${key}, `
@@ -102,6 +108,9 @@ function Body() {
             box[3] 
             ?
             <Fragment>
+                 <Holder>
+                <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [3]: false})}}></RedX>
+                </Holder>
                 { gist.education.map((key,value) => 
                 <Text>
                    <Text>{key.degree} - {key.year}</Text>
@@ -120,6 +129,9 @@ function Body() {
             box[4] 
             ?
             <Fragment>
+                <Holder>
+                <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [4]: false})}}></RedX>
+                </Holder>
             </Fragment>
             :
             <Cover></Cover>
@@ -136,6 +148,7 @@ function Body() {
                     { gist.projects.map((key,value) =>
                     value === proj ? <BlackOval onClick={()=> setProj(value)}></BlackOval> : <Oval onClick={()=> setProj(value)}></Oval>
                     )}
+                    <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [5]: false})}}></RedX>
                 </Holder>
                 < Text>
                     { gist.projects[proj].name}
@@ -167,6 +180,7 @@ function Body() {
                     { gist.experience.map((key,value) =>
                     value === exp ? <BlackOval onClick={()=> setExp(value)}></BlackOval> : <Oval onClick={()=> setExp(value)}></Oval>
                     )}
+                    <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [6]: false})}}></RedX>
                 </Holder>
                 <Text>
                 { gist.experience[exp].name}
