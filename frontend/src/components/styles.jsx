@@ -39,6 +39,8 @@ import styled from 'styled-components';
     box-shadow: inset 1px 1px 9px 1px #888888,
     inset 1px 1px 9px 1px #888888;
     `
+    const GreyBox = styled.div`
+    `
     const Holder = styled.div`
     margin-left: 10px;
     margin-top: 10px;
@@ -114,4 +116,4 @@ import styled from 'styled-components';
         margin-left: 0%;
     }
     `
-export {MainPage, Bar, Name, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX}
+export {MainPage, Bar, Name, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX, GreyBox}

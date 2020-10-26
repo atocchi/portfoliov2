@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import {MainPage, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX} from './styles';
+import {MainPage, Box, Text, Container, Column, Cover, CoverText, Oval, Holder, BlackOval, RedX, GreyBox} from './styles';
 import NavBar from './navBar';
 let data = '<div> bepis </div>'
 
@@ -132,9 +132,13 @@ function Body() {
                 <Holder>
                 <RedX onClick={(e)=> {e.stopPropagation();  setBox({...box, [4]: false})}}></RedX>
                 </Holder>
+                <Text>Resume is pulled from the following gist:</Text>
+                <Text><a href='https://gist.github.com/atocchi/aff068d4477f105b39b88ffb95fa83ca'>GIST</a></Text>
+                <Text>Clicking on any grey box will load a get request pulling my resume from the GIST</Text>
+                <Text>White Ovals to cycle through array, and red button to close</Text>
             </Fragment>
             :
-            <Cover></Cover>
+            <Cover>How To:</Cover>
             }
             </Box>
             </Column>
