@@ -27,6 +27,23 @@ function Body() {
      projects: [{name: '', github: '', deployed: '', tools: '', bulletpoints: [{bp: ''}]}],
      experience: [{name: '', postion: '', start: '12/31/1969', end: '01/01/1970', description: ''}]
  });
+const [ip, setIp] = useState('Waiting for API')
+
+ useEffect(()=> {
+ console.log('use effect')
+ fetch('/api/ip').then((response) =>{
+     if(response.status === 200){
+         response.json().then((res)=>{
+             setIp(res.ip)
+         })
+     }
+     else{(console.log(response.status))
+     }
+ })
+ },[])
+
+
+
  function clickHandler(x){
         fetch('https://gist.githubusercontent.com/atocchi/aff068d4477f105b39b88ffb95fa83ca/raw/4af46819030ebc5b90f9b20e1d7ff24d37208f9f/data.json')
     .then((response) =>{
@@ -136,6 +153,7 @@ function Body() {
                 <Text><a href='https://gist.github.com/atocchi/aff068d4477f105b39b88ffb95fa83ca'>GIST</a></Text>
                 <Text>Clicking on any grey box will load a get request pulling my resume from the GIST</Text>
                 <Text>White Ovals to cycle through array, and red button to close</Text>
+                <Text>One more thing, your ip is: {ip}</Text>
             </Fragment>
             :
             <Cover>How To:</Cover>
