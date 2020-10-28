@@ -1,1 +1,5 @@
 /node_modules
+private.key
+csr.pem
+/static
+ecosystem.config.js

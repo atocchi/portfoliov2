@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require ('cors');
 const app = express();
-const PORT = 80;
+const PORT = 3000;
 const path = require ('path');
 
 //cors for API 
@@ -21,7 +21,9 @@ app.listen(PORT, function() {
 //get request to show IP, simple API
 app.get('/api/ip', cors(), function(req, res) {
   console.log('api request')
-  res.json({ip : req.connection.remoteAddress})
+  const real = req.headers['x-real-ip'] 
+  console.log('#####' + real)
+  res.json({ip : real})
 })
 
 //super basic express template, just serves react files, and has failback because wildcard
